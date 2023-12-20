@@ -1,13 +1,13 @@
 version: '3.7'
 services:
   grafana:
-    image: grafana/grafana-enterprise:${GR_VERSION:-10.0.3}
+    image: grafana/grafana-enterprise:${GR_VERSION:-9.3.2}
     # image: grafana/grafana-enterprise:latest
     # image: grafana/grafana-enterprise:main
     ports:
       - '3000:3000'
     volumes:
-      - ./:/var/lib/grafana/plugins/grafana-clickhouse-datasource
+      - ./:/var/lib/grafana/plugins/nava-clickhouse-datasource
       - ./provisioning:/etc/grafana/provisioning
     environment:
       - TERM=linux
